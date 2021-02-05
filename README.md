@@ -9,9 +9,15 @@
 * 安装npm：
 * 检查npm：`npm -v`
 * 安装electron：`npm i --save-dev electron`
-* 检查electron：`npm ls electron`
+* 检查electron：
 
-注意：如果安装不了加`--registry http://mirrors.tuna.tsinghua.edu.cn/npm/egistry`
+```cmd
+>npm ls electron
+desktop_tool@1.0.0 D:\open_source_code\desktop_tool
+`-- electron@11.2.2
+```
+
+注意：如果安装不了，尝试单个安装卡住的模块。如果有版本号就说明安装成功
 
 
 ## 运行
