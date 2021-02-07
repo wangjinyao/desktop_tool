@@ -10,6 +10,7 @@ function createWindow () {
   })
 
   win.loadFile('index.html')
+  win.webContents.openDevTools()  // 打开开发者工具
 }
 
 app.whenReady().then(createWindow)
