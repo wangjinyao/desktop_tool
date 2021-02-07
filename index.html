@@ -10,20 +10,17 @@
   </head>
   <body style="background: white">
     <h1>Hello World!</h1>
-    <p>
-      We are using node
-      <script>
-        document.write(process.versions.node);
-      </script>
-      , Chrome
-      <script>
-        document.write(process.versions.chrome);
-      </script>
-      , and Electron
-      <script>
-        document.write(process.versions.electron);
-      </script>
-      .
-    </p>
+    <button id="btn">msg</button>
+    <button id='msgToDevtools'>msgToDevtools</button>
+    <script>
+      const { ipcRenderer } = require("electron");
+      
+      document.getElementById("btn").addEventListener("click", () => {
+        ipcRenderer.send("msgToMain");
+      });
+      document.getElementById("msgToDevtools").addEventListener("click", () => {
+        console.log('helooworld')
+      });
+    </script>
   </body>
 </html>
