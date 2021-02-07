@@ -1,5 +1,11 @@
-const { ipcMain } = require('electron')
+const { BrowserWindow } = require('electron');
+const ipc = require('electron').ipcMain
 
-ipcMain.on('msgToMain', (event, arg) => {
-    console.log("helloworld")
+ipc.on('msgToMain', (event, arg) => {
+  console.log("helloworld")
+})
+
+ipc.on('newWindow', (event, arg) => {
+  win = BrowserWindow.getFocusedWindow()
+  win.loadFile('./views/other.html')
 })

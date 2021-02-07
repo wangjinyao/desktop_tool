@@ -1,6 +1,4 @@
 const { app, BrowserWindow } = require('electron')
-const { Notification } = require('electron')
-const { ipcMain } = require('electron')
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -14,7 +12,7 @@ function createWindow() {
   require('./main/menu'); //定义菜单栏
   require('./main/main-functions')
 
-  win.loadFile('index.html')
+  win.loadFile('./views/index.html')
 }
 
 app.whenReady().then(createWindow)

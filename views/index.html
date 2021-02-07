@@ -11,15 +11,15 @@
   <body style="background: white">
     <h1>Hello World!</h1>
     <button id="btn">msg</button>
-    <button id='msgToDevtools'>msgToDevtools</button>
+    <button id='newWindow'>newWindow</button>
     <script>
       const { ipcRenderer } = require("electron");
       
       document.getElementById("btn").addEventListener("click", () => {
         ipcRenderer.send("msgToMain");
       });
-      document.getElementById("msgToDevtools").addEventListener("click", () => {
-        console.log('helooworld')
+      document.getElementById("newWindow").addEventListener("click", () => {
+        ipcRenderer.send("newWindow");
       });
     </script>
   </body>
