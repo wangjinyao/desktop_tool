@@ -24,4 +24,4 @@ desktop_tool@1.0.0 D:\open_source_code\desktop_tool
 
 ---
 
-`npm start`
+启动命令：`npm start`
