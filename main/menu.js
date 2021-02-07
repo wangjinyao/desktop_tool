@@ -1,5 +1,5 @@
 const { Menu, dialog } = require('electron');
-const {BrowserWindow} = require('electron');
+const { BrowserWindow } = require('electron');
 const pjson = require('../package.json');
 let menuTemplate = [
   {
@@ -19,7 +19,7 @@ let menuTemplate = [
       label: 'windows_list',
       click: getAllWindows
     }
-  ]
+    ]
   },
   {
     label: '帮助',
@@ -30,7 +30,7 @@ let menuTemplate = [
   },
 ];
 
-function getAllWindows(){
+function getAllWindows() {
   //获取窗口列表
   wins = BrowserWindow.getAllWindows()
   console.log(wins)
@@ -49,15 +49,13 @@ function getAboutInfo() {
   msg += '\rElectron: ' + process.versions.electron
   msg += '\rNode: ' + process.versions.node
   msg += '\rV8: ' + process.versions.v8
-  msg += '\rplatform: ' + process.platform + '(' + process.arch +')'
+  msg += '\rplatform: ' + process.platform + '(' + process.arch + ')'
   dialog.showMessageBox({
     message: msg,
   }).then(result => {
     console.log(result)
   })
 }
-
-
 
 const menu = Menu.buildFromTemplate(menuTemplate);
 Menu.setApplicationMenu(menu);
