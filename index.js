@@ -9,6 +9,8 @@ function createWindow () {
     }
   })
 
+  require('./menu');
+
   win.loadFile('index.html')
   win.webContents.openDevTools()  // 打开开发者工具
 }
